@@ -22,7 +22,6 @@ const FormProvider = function ({ children }) {
     const apiUrl = import.meta.env.VITE_API_URL;
 
     //   POST data to Brevo
-
     const response = await axios.post(`${apiUrl}/api/submit`, {
       email_address: email,
       // listIds: [2],
