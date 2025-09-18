@@ -19,11 +19,11 @@ const FormProvider = function ({ children }) {
   const setErrorMessage = (status) => setError(status);
 
   const createContact = async function ({ email }) {
-    const apiKey = import.meta.env.VITE_BREVO_API_KEY;
+    const apiUrl = import.meta.env.VITE_API_URL;
 
     //   POST data to Brevo
 
-    const response = await axios.post("/api/submit", {
+    const response = await axios.post(`${apiUrl}/api/submit`, {
       email_address: email,
       // listIds: [2],
     });
