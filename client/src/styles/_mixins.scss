@@ -1,0 +1,40 @@
+@use "./variables";
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+}
+@mixin flex-space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin sora($weight) {
+  font-family: "Sora", sans-serif;
+  font-weight: $weight;
+  font-style: normal;
+}
+
+@mixin dmsans($weight) {
+  font-family: "DM Sans", sans-serif;
+  font-weight: $weight;
+  font-style: normal;
+}
+
+@mixin ibmsans($weight) {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: $weight;
+  font-style: normal;
+  font-optical-sizing: auto;
+  font-variation-settings: "wdth" 100;
+}

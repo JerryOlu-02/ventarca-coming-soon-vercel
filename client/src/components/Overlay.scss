@@ -1,0 +1,81 @@
+@use "/src/styles/variables";
+@use "/src/styles/mixins";
+
+@keyframes blend {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  @include mixins.flex-center;
+  opacity: 1;
+
+  animation: blend 0.5s linear;
+
+  pointer-events: all;
+}
+
+.overlay.hidden {
+  z-index: unset;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.popup {
+  pointer-events: auto;
+  position: relative;
+  max-width: 576px;
+  padding: 78px 48px 48px;
+  background-color: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(153, 153, 153, 1);
+  @include mixins.flex-column;
+  @include mixins.flex-center;
+  gap: 12px;
+  border-radius: 8px;
+
+  letter-spacing: 0px;
+  text-align: center;
+  vertical-align: middle;
+
+  h3 {
+    @include mixins.sora(600);
+
+    font-size: 28px;
+    line-height: 100%;
+  }
+
+  p {
+    @include mixins.dmsans(400);
+    font-size: 16px;
+    line-height: 100%;
+  }
+
+  .close {
+    cursor: pointer;
+    position: absolute;
+    top: 32px;
+    right: 48px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .overlay {
+    padding: 0 20px;
+  }
+
+  .popup {
+    max-width: unset;
+    width: 100%;
+  }
+}
