@@ -66,4 +66,4 @@ const PORT = process.env.PORT || 8000;
 
 app.listen(8000, () => console.log(`Server is running on ${PORT}`));
 
-export default app;
+module.exports = app;
